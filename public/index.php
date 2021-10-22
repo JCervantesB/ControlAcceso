@@ -2,10 +2,16 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use Controllers\LoginController;
 use MVC\Router;
 
 $router = new Router();
 
+// Iniciar sesion
+$router->get('/', [LoginController::class, 'login']);
+$router->post('/', [LoginController::class, 'login']);
+// Cerrar Sesion
+$router->get('/logout', [LoginController::class, 'logout']);
 
 
 
